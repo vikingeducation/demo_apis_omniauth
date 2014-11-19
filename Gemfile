@@ -38,3 +38,24 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+group :development do 
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  # Guess what method we were TRYING to type
+  gem 'did_you_mean'
+
+  # Silence those annoying development asset pipeline logs
+  gem 'quiet_assets'
+end
+
+group :development, :test do
+
+  # Spruce up our console output
+  # Note: Need to pull this fork directly because
+  # the original uses pry-debugger which doesn't work
+  # with Ruby 2
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
+end
