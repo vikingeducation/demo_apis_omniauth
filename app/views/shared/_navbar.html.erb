@@ -3,8 +3,16 @@
     <li>
       <%= link_to "Users", users_path %>
     </li>
+<!--     <li>
+      <%#= render "shared/fb" %>
+    </li> -->
     <li>
-      <%= render "shared/fb" %>
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path %>
+      <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+      <% end %>
     </li>
   </ul>
 </div>

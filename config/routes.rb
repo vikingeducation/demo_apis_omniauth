@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  get 'sessions/create'
+
+  root 'users#index'
+
+  # omniauth success and failure routes
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
