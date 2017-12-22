@@ -49,12 +49,12 @@ gem "figaro"
 # gem 'debugger', group: [:development, :test]
 
 
-group :development do 
+group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 
   # Guess what method we were TRYING to type
-  gem 'did_you_mean'
+  gem 'did_you_mean', '~> 1.0.3'
 
   # Silence those annoying development asset pipeline logs
   gem 'quiet_assets'
@@ -66,6 +66,6 @@ group :development, :test do
   # Note: Need to pull this fork directly because
   # the original uses pry-debugger which doesn't work
   # with Ruby 2
-  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'jazz_fingers'
   gem 'pry-byebug'
 end
